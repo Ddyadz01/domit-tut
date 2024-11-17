@@ -1,0 +1,24 @@
+.header {
+  margin: 15px 0;
+  height: 40px;
+  z-index: 10;
+  position: relative;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &_left {
+      display: flex;
+      align-items: center;
+      img {
+        height: 24px;
+      }
+    }
+    &_center {
+      display: flex;
+    }
+    &_right {
+      display: flex;
+    }
+  }
+}
