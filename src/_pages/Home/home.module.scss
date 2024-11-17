@@ -34,8 +34,8 @@
     justify-content: space-between;
     align-items: center;
     &_left {
+      max-width: 600px;
       h1 {
-        max-width: 600px;
         font-size: 60px;
         font-weight: 800;
         line-height: 140%;
@@ -43,14 +43,28 @@
         text-align: left;
       }
       p {
-        max-width: 600px;
-        color: rgb(255, 255, 255);
         font-size: 25px;
         font-weight: 600;
         line-height: 150%;
         letter-spacing: 0%;
         text-align: left;
         margin-top: 20px;
+      }
+      &_media {
+        margin-top: 90px;
+        display: flex;
+        align-items: center;
+        svg {
+          margin-right: 10px;
+          cursor: pointer;
+          width: 24px;
+          height: 24px;
+          stroke: var(--color-gray);
+          transition: 0.3s;
+          &:hover {
+            stroke: #fff;
+          }
+        }
       }
     }
   }

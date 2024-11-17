@@ -23,7 +23,7 @@ export const Header = () => {
             <Heart />
             <div className={styles.header__content_right_search}>
               <Search />
-              <input type="text" />
+              <input type="text" placeholder="Поиск по названию" />
             </div>
           </div>
         </div>

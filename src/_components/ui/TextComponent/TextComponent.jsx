@@ -6,6 +6,7 @@ const sizes = {
   base: 'base',
   lg: 'lg',
   xl: 'lg',
+  heading: 'title-block',
 };
 
 export const TextComponent = ({ text, size }) => {

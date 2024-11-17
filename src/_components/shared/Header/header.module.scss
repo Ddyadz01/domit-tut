@@ -19,6 +19,25 @@
     }
     &_right {
       display: flex;
+      &_search {
+        display: flex;
+        margin-left: 20px;
+        input {
+          background: none;
+          border: none;
+          margin-left: 10px;
+          outline: none;
+          padding: 5px 0;
+          font-size: 14px;
+          &::placeholder {
+            color: #fff;
+          }
+        }
+      }
     }
+  }
+  svg {
+    width: 20px;
+    cursor: pointer;
   }
 }
