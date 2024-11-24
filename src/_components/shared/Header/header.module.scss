@@ -1,12 +1,18 @@
 .header {
-  margin: 15px 0;
-  height: 40px;
+  height: 60px;
   z-index: 10;
   position: relative;
   transition: 0.3s;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  top: 0;
   &__content {
     display: flex;
     align-items: center;
+    width: 1440px;
     justify-content: space-between;
     &_left {
       display: flex;
