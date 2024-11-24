@@ -9,6 +9,6 @@ const sizes = {
   heading: 'title-block',
 };
 
-export const TextComponent = ({ text, size }) => {
-  return <div className={sizes[size]}>{text}</div>;
+export const TextComponent = ({ text, size = 'base' }) => {
+  return <p className={sizes[size]}>{text}</p>;
 };

@@ -3,10 +3,10 @@ import { TextComponent } from '../../IndexComponents';
 
 import './link.scss';
 
-export const LinkComponent = ({ text, path }) => {
+export const LinkComponent = ({ text, path, type = 'default' }) => {
   return (
-    <Link to={path}>
-      <TextComponent text={text} size={'base'} />
+    <Link to={path} className={type}>
+      <TextComponent text={text} size={'sm'} />
     </Link>
   );
 };

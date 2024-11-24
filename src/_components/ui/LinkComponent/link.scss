@@ -1,5 +1,9 @@
 a {
   text-decoration: none;
+  text-align: center;
+}
+
+a.link {
   position: relative;
   margin: 0 15px;
   &::after {
@@ -28,5 +32,21 @@ a {
   }
   &:hover::before {
     width: 50%;
+  }
+}
+
+a.primary {
+  background: var(--color-primary) !important;
+  display: block;
+  max-width: 200px;
+  border-radius: 9px;
+  margin: 0 auto;
+  transition: 0.2s;
+  p {
+    color: var(--text-color);
+    padding: 15px 20px;
+  }
+  &:hover {
+    background: var(--color-primary-hover) !important;
   }
 }

@@ -22,24 +22,6 @@ const slides = [
     imageUrl:
       'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
-  {
-    id: 4,
-    title: 'С бассейном',
-    imageUrl:
-      'https://images.unsplash.com/photo-1575204015190-28962b6919bf?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    id: 5,
-    title: 'С бассейном',
-    imageUrl:
-      'https://images.unsplash.com/photo-1575204015190-28962b6919bf?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    id: 6,
-    title: 'С бассейном',
-    imageUrl:
-      'https://images.unsplash.com/photo-1575204015190-28962b6919bf?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
 ];
 
 export const MiniSlider = () => {
@@ -63,14 +45,18 @@ export const MiniSlider = () => {
   return (
     <div className={styles.mini__slider}>
       <div className={styles.mini__slider_btns}>
-        <ChevronLeft
-          color={currentSlide === 3 ? 'var(--color-gray)' : 'white'}
-          onClick={() => handleClick('prev')}
-        />
-        <ChevronRight
-          color={currentSlide === slides.length ? 'var(--color-gray)' : 'white'}
-          onClick={() => handleClick('next')}
-        />
+        <div className={styles.mini__slider_btns_left}>
+          <ChevronLeft
+            color={currentSlide === 3 ? 'var(--color-gray)' : 'white'}
+            onClick={() => handleClick('prev')}
+          />
+        </div>
+        <div className={styles.mini__slider_btns_right}>
+          <ChevronRight
+            color={currentSlide === slides.length ? 'var(--color-gray)' : 'white'}
+            onClick={() => handleClick('next')}
+          />
+        </div>
       </div>
       <div
         className={styles.mini__slider_slides}

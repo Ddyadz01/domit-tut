@@ -3,6 +3,7 @@
   height: 40px;
   z-index: 10;
   position: relative;
+  transition: 0.3s;
   &__content {
     display: flex;
     align-items: center;

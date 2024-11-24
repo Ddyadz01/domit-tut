@@ -15,8 +15,8 @@ export const Header = () => {
           </div>
 
           <div className={styles.header__content_center}>
-            <LinkComponent text={'Сотрудничество'} path={'/'} />
-            <LinkComponent text={'Частые вопросы'} path={'/about'} />
+            <LinkComponent text={'Сотрудничество'} path={'/'} type={'link'} />
+            <LinkComponent text={'Частые вопросы'} path={'/about'} type={'link'} />
           </div>
 
           <div className={styles.header__content_right}>

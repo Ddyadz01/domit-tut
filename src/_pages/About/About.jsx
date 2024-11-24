@@ -1,7 +1,12 @@
 import React from 'react';
+import { CenterContent, TextComponent } from '../../_components/IndexComponents';
 
 const About = () => {
-  return <div>About</div>;
+  return (
+    <CenterContent>
+      <TextComponent size={'heading'} text={'Информация'} />
+    </CenterContent>
+  );
 };
 
 export default About;
