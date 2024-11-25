@@ -4,6 +4,8 @@ import { TextComponent } from '../../_components/IndexComponents';
 
 import { Heart, MapPin, Share2 } from 'lucide-react';
 
+import { ShareLinkProduct } from '../../utils/ShareLinkProduct';
+
 import styles from './product.module.scss';
 
 const ProductInfoTop = ({ product }) => {
@@ -15,7 +17,7 @@ const ProductInfoTop = ({ product }) => {
       </div>
       <div className={styles.product__info_top_btns}>
         <Heart />
-        <Share2 />
+        <Share2 onClick={ShareLinkProduct} />
       </div>
     </div>
   );
