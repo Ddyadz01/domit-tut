@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './item-card.module.scss';
 import { Button, TextComponent } from '../../IndexComponents';
 import { MoveRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const ItemCard = ({ item }) => {
   return (
@@ -40,8 +41,10 @@ export const ItemCard = ({ item }) => {
         </div>
         <div className={styles.item__card_content_bottom}>
           <TextComponent text={'от 10 000 ₽ / сутки'} size="lg" />
-          <Button text={'Подробнее'} type={'line'} />
-          <MoveRight />
+          <Link to={`/product/${item.id}`}>
+            <Button text={'Подробнее'} type={'line'} />
+            <MoveRight />
+          </Link>
         </div>
       </div>
     </div>

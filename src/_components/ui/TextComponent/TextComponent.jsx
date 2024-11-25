@@ -9,6 +9,13 @@ const sizes = {
   heading: 'title-block',
 };
 
-export const TextComponent = ({ text, size = 'base' }) => {
-  return <p className={sizes[size]}>{text}</p>;
+export const TextComponent = ({ text, icon, size = 'base' }) => {
+  return icon ? (
+    <p className={sizes[size] + ' icon'}>
+      {icon}
+      {text}
+    </p>
+  ) : (
+    <p className={sizes[size]}>{text}</p>
+  );
 };

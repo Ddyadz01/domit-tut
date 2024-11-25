@@ -6,30 +6,24 @@ a {
 a.link {
   position: relative;
   margin: 0 15px;
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 2px;
-    display: block;
-    transition: 0.3s;
-    background-color: rgb(255, 255, 255);
-  }
+  &::after,
   &::before {
     content: '';
     position: absolute;
-    bottom: -2px;
-    right: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     display: block;
     transition: 0.3s;
     background-color: rgb(255, 255, 255);
   }
-  &:hover::after {
-    width: 50%;
+  &::after {
+    left: 0;
   }
+  &::before {
+    bottom: -1px;
+    right: 0;
+  }
+  &:hover::after,
   &:hover::before {
     width: 50%;
   }

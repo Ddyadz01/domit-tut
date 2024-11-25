@@ -1,3 +1,13 @@
+p {
+  align-items: center;
+}
+
+p.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .xs {
   font-size: 12px;
 }
