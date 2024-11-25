@@ -79,7 +79,7 @@ const ProductPage = () => {
                   size="lg"
                 />
                 <TextComponent
-                  text={`${product.persons_info.number_bedrooms} спален`}
+                  text={`${product.persons_info.count_bedrooms} спален`}
                   icon={<BedDouble />}
                   size="lg"
                 />

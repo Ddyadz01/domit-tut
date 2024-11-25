@@ -14,10 +14,13 @@ export const ItemCard = ({ item }) => {
       <div className={styles.item__card_content}>
         <TextComponent size="lg" text={item.title} />
         <div className={styles.item__card_content__list}>
-          {item.features.sleeping_places && (
+          {item.persons_info.sleeping_places && (
             <div className={styles.item__card_content__list_info}>
               <img src="/icons/items_icons/icon_bed.png" />
-              <TextComponent size="base" text={`${item.features.sleeping_places} cпальных мест`} />
+              <TextComponent
+                size="base"
+                text={`${item.persons_info.sleeping_places} cпальных мест`}
+              />
             </div>
           )}
           {item.features.bathhouse && (
