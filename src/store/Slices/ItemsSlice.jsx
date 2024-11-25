@@ -5,6 +5,7 @@ const initialState = {
     {
       id: 1,
       imageURL: '/items_images/1.avif',
+      videoURL: '/1.mp4',
       title: 'Новая сосновка',
       addres: 'г. Красногорск, д. 3с1',
       features: {
@@ -27,10 +28,53 @@ const initialState = {
         count_bedrooms: 2,
         max_persons: 6,
       },
+      tariffs: {
+        prices_info: [
+          {
+            id: 1,
+            title: 'Будние',
+            price: '8000',
+          },
+          {
+            id: 2,
+            title: 'Пятница',
+            price: '10000',
+          },
+          {
+            id: 3,
+            title: 'Суббота',
+            price: '12000',
+          },
+          {
+            id: 4,
+            title: 'Воскресенье',
+            price: '12000',
+          },
+        ],
+        ball: '3000',
+        options: [
+          {
+            id: 1,
+            title: 'Полные выходные (ПТ-ВС)',
+            price: '12000',
+          },
+          {
+            id: 2,
+            title: 'Новый год (2 дня)',
+            price: '80000',
+          },
+          {
+            id: 3,
+            title: 'Январские празднкии (сутки)',
+            price: '30000',
+          },
+        ],
+      },
     },
     {
       id: 2,
       imageURL: '/items_images/2.avif',
+      videoURL: '/2.mp4',
       title: 'Салмачи 1',
       addres: 'Рублево-Успенское шоссе 24 км от МКАД',
       features: {
@@ -54,12 +98,42 @@ const initialState = {
         count_bedrooms: 12,
         max_persons: 30,
       },
+      tariffs: {
+        prices_info: [
+          {
+            id: 1,
+            title: 'Будние',
+            price: '8000',
+          },
+          {
+            id: 2,
+            title: 'Пятница',
+            price: '10000',
+          },
+        ],
+        ball: '1000',
+        options: [
+          {
+            id: 1,
+            title: 'Полные выходные (ПТ-ВС)',
+            price: '15000',
+          },
+          {
+            id: 3,
+            title: 'Январские празднкии (сутки)',
+            price: '28000',
+          },
+        ],
+      },
     },
     {
       id: 3,
       imageURL: '/items_images/3.avif',
+      videoURL: '/3.mp4',
       title: 'Новая сосновка',
       addres: 'Рублево-Успенское шоссе 24 км от МКАД',
+      information:
+        '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, odio voluptatibus vitae perspiciatis repellendus est cumque sed rem delectus, cupiditate fugiat in ipsum mollitia nisi dignissimos! Repudiandae quaerat, animi dolorum voluptatum sit quis sunt reprehenderit enim, sed magnam, quo unde soluta ipsum quidem architecto doloremque autem. Ipsa, maxime doloremque atque, iure expedita officia vero quas adipisci obcaecati quos autem ratione? Eveniet molestias quidem deleniti dolore ullam, impedit vitae dolores dicta, tempora facere illo. Nobis iusto rerum sint eos illo, at oloribus error quia, corrupti eum distinctio nemo! Inventore accusamus, aperiam incidunt quibusdam nemo minima laborum assumenda, sunt dolore voluptate repellat!',
       features: {
         sleeping_places: 6,
         table_tennis: true,
@@ -80,6 +154,33 @@ const initialState = {
         sleeping_places: '35',
         count_bedrooms: 8,
         max_persons: 42,
+      },
+      tariffs: {
+        prices_info: [
+          {
+            id: 1,
+            title: 'Будние',
+            price: '8000',
+          },
+          {
+            id: 2,
+            title: 'Пятница',
+            price: '10000',
+          },
+        ],
+        ball: '1000',
+        options: [
+          {
+            id: 1,
+            title: 'Полные выходные (ПТ-ВС)',
+            price: '15000',
+          },
+          {
+            id: 3,
+            title: 'Январские празднкии (сутки)',
+            price: '28000',
+          },
+        ],
       },
     },
     {
@@ -108,6 +209,33 @@ const initialState = {
         count_bedrooms: 8,
         max_persons: 42,
       },
+      tariffs: {
+        prices_info: [
+          {
+            id: 1,
+            title: 'Будние',
+            price: '8000',
+          },
+          {
+            id: 2,
+            title: 'Пятница',
+            price: '10000',
+          },
+        ],
+        ball: '1000',
+        options: [
+          {
+            id: 1,
+            title: 'Полные выходные (ПТ-ВС)',
+            price: '15000',
+          },
+          {
+            id: 3,
+            title: 'Январские празднкии (сутки)',
+            price: '28000',
+          },
+        ],
+      },
     },
     {
       id: 5,
@@ -135,6 +263,43 @@ const initialState = {
         count_bedrooms: 6,
         max_persons: 25,
       },
+      tariffs: {
+        prices_info: [
+          {
+            id: 1,
+            title: 'Будние',
+            price: '8000',
+          },
+          {
+            id: 2,
+            title: 'Пятница',
+            price: '10000',
+          },
+        ],
+        ball: '1000',
+        options: [
+          {
+            id: 1,
+            title: 'Полные выходные (ПТ-ВС)',
+            price: '15000',
+          },
+          {
+            id: 2,
+            title: 'Январские празднкии (сутки)',
+            price: '28000',
+          },
+          {
+            id: 3,
+            title: 'День (5 часов)',
+            price: '5600',
+          },
+          {
+            id: 4,
+            title: 'Ночь (5 часов)',
+            price: '8600',
+          },
+        ],
+      },
     },
     {
       id: 6,
@@ -161,6 +326,33 @@ const initialState = {
         sleeping_places: '35',
         count_bedrooms: 8,
         max_persons: 42,
+      },
+      tariffs: {
+        prices_info: [
+          {
+            id: 1,
+            title: 'Будние',
+            price: '8000',
+          },
+          {
+            id: 2,
+            title: 'Пятница',
+            price: '10000',
+          },
+        ],
+        ball: '1000',
+        options: [
+          {
+            id: 1,
+            title: 'Полные выходные (ПТ-ВС)',
+            price: '15000',
+          },
+          {
+            id: 3,
+            title: 'Январские празднкии (сутки)',
+            price: '28000',
+          },
+        ],
       },
     },
   ],

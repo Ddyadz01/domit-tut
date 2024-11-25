@@ -1,100 +1,73 @@
-import React, { useEffect, useState } from 'react';
-
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { CenterContent, TextComponent } from '../../_components/IndexComponents';
 
+import ProductInfoTop from './ProductInfoTop';
+import ProductInfoContent from './ProductInfoContent';
+import ProductInfoBottom from './ProductInfoBottom';
+
+import { useCurrentProduct } from '../../hooks/useCurrentProduct';
+
+import { useEffect, useRef, useState } from 'react';
+
 import styles from './product.module.scss';
-import { BedDouble, Heart, MapPin, Share2, User } from 'lucide-react';
+import { Pause, Play } from 'lucide-react';
 
 const ProductPage = () => {
-  const [product, setProduct] = useState(null);
-  const { items } = useSelector((state) => state.items);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const videoRef = useRef();
+
+  const handleVideo = () => {
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+    } else {
+      videoRef.current.pause();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   const { id } = useParams();
 
-  useEffect(() => {
-    const product = items.filter((product) => product.id == id);
-    setProduct(product[0]);
-  }, [id]);
+  const product = useCurrentProduct(id);
 
   return product ? (
-    <div className={styles.product__page}>
-      <CenterContent>
-        <div className={styles.product__info}>
-          <div className={styles.product__info_top}>
-            <div className={styles.product__info_top_text}>
-              <TextComponent text={product.title} size={'heading'} />
-              <TextComponent text={product.addres} size={'base'} icon={<MapPin />} />{' '}
-            </div>
-            <div className={styles.product__info_top_btns}>
-              <Heart />
-              <Share2 />
-            </div>
-          </div>
-          <div className={styles.product__info_content}>
-            <div className={styles.product__info_content_left}>
-              <img src={product.imageURL} alt="" />
-            </div>
-            <div className={styles.product__info_content_right}>
-              {product.features?.images?.map((image) => (
-                <img src={image} />
-              ))}
-            </div>
-          </div>
-          <div className={styles.product__info_bottom}>
-            <div className={styles.product__info_bottom_info_home}>
-              <table>
-                <thead>
-                  <tr>
-                    <th scope="col">
-                      <TextComponent text={'Тип жилья'} size="sm" />
-                    </th>
-                    <th scope="col">
-                      <TextComponent text={'Этажи'} size="sm" />
-                    </th>
-                    <th scope="col">
-                      <TextComponent text={'Площадь'} size="sm" />
-                    </th>
-                    <th scope="col">
-                      <TextComponent text={'Участок'} size="sm" />
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{product.persons_info.type_house}</td>
-                    <td>{product.persons_info.floors}</td>
-                    <td>
-                      {product.persons_info.house_area}м<sup>2</sup>
-                    </td>
-                    <td>{product.persons_info.plot_size} соток</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div className={styles.product__info_bottom_info_home_persons}>
-                <TextComponent
-                  text={`${product.persons_info.sleeping_places} спальных мест`}
-                  icon={<BedDouble />}
-                  size="lg"
-                />
-                <TextComponent
-                  text={`${product.persons_info.count_bedrooms} спален`}
-                  icon={<BedDouble />}
-                  size="lg"
-                />
-                <TextComponent
-                  text={`до ${product.persons_info.max_persons} человек`}
-                  icon={<User />}
-                  size="lg"
-                />
+    <>
+      <div className={styles.product__page}>
+        <div className={styles.video_bg}>
+          <CenterContent>
+            <video autoPlay poster={product.imageURL} src={product?.videoURL} muted loop />
+          </CenterContent>
+        </div>
+        <CenterContent>
+          <div className={styles.product__info}>
+            <ProductInfoTop product={product} />
+            <ProductInfoContent product={product} />
+            <ProductInfoBottom product={product} />
+            <div className={styles.product__info_more}>
+              <TextComponent text={'Описание'} size="title" />
+              <div className={styles.product__info_more__text}>
+                <TextComponent text={product.information} />
               </div>
             </div>
-            <div className={styles.product__info_bottom_info_price}>{/* <h1>Prices</h1> */}</div>
+            <div className={styles.product__info__media}>
+              <div className={styles.product__info__media_left}>
+                <video
+                  width={700}
+                  height={500}
+                  ref={videoRef}
+                  poster={product.imageURL}
+                  src={product?.videoURL}
+                  onClick={handleVideo}
+                />
+                {!isPlaying && <Play />}
+              </div>
+              <div className={styles.product__info__media_right}></div>
+            </div>
           </div>
-        </div>
-      </CenterContent>
-    </div>
+        </CenterContent>
+      </div>
+    </>
   ) : (
     'Товар не найден'
   );

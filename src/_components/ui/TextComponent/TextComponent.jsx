@@ -7,6 +7,7 @@ const sizes = {
   lg: 'lg',
   xl: 'lg',
   heading: 'title-block',
+  title: 'title-block-lg',
 };
 
 export const TextComponent = ({ text, icon, size = 'base' }) => {

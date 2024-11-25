@@ -6,7 +6,7 @@ import { Button, CenterContent, LinkComponent, TextComponent } from '../../Index
 const Footer = () => {
   return (
     <footer>
-      <div className={styles.footer__background}>
+      {/* <div className={styles.footer__background}>
         <img src="/images/footer.png" />
         <CenterContent>
           <div className={styles.footer__top_content}>
@@ -15,7 +15,7 @@ const Footer = () => {
             <Button text={'Оставить заявку'} type={'primary'} />
           </div>
         </CenterContent>
-      </div>
+      </div> */}
       <div className={styles.footer__content}>
         <CenterContent>
           <div className={styles.footer__content_info}>

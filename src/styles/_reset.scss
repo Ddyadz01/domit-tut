@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Inter Tight', sans-serif;
   list-style: none;
   box-sizing: border-box;
   color: var(--color-text);
@@ -15,4 +15,6 @@
   --color-primary-hover: rgb(234, 70, 21);
   --color-gray: rgb(192, 194, 215);
   --color-text: #fff;
+  --bg-element: #1e1e2c;
+  --color-dark-text: #424262;
 }
