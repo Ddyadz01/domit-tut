@@ -12,7 +12,10 @@ const ProductButtons = () => {
 
   return (
     <div className={styles.product__info_bottom_info_price_buttons}>
-      <Button text={user.token ? 'Оставить заявку' : 'Входите'} type={'primary'} />
+      <Button
+        text={user.token ? 'Оставить заявку' : 'Входите, чтообы оставить заявку'}
+        type={'primary'}
+      />
       {user.token && (
         <Button
           text={
