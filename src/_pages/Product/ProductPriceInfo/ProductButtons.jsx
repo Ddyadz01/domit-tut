@@ -1,9 +1,10 @@
+import { useSelector } from 'react-redux';
+
 import { Button } from '../../../_components/IndexComponents';
 
-import { ExternalLink, Heart } from 'lucide-react';
-
-import { useSelector } from 'react-redux';
 import { ShareLinkProduct } from '../../../utils/ShareLinkProduct';
+
+import { ExternalLink, Heart } from 'lucide-react';
 
 import styles from '../product.module.scss';
 

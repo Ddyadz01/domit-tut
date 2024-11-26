@@ -6,12 +6,13 @@ import ProductInfoTop from './ProductInfoTop';
 import ProductInfoContent from './ProductInfoContent';
 import ProductInfoBottom from './ProductInfoBottom';
 
+import { useRef, useState } from 'react';
+
 import { useCurrentProduct } from '../../hooks/useCurrentProduct';
 
-import { useEffect, useRef, useState } from 'react';
+import { Play } from 'lucide-react';
 
 import styles from './product.module.scss';
-import { Pause, Play } from 'lucide-react';
 
 const ProductPage = () => {
   const [isPlaying, setIsPlaying] = useState(false);

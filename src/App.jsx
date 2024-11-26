@@ -1,10 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { Header } from './_components/IndexComponents';
+import Footer from './_components/shared/Footer/Footer';
+
+import HeaderDevelopment from './develompentComponents/HeaderDevelopment/HeaderDevelopment';
 
 import Home from './_pages/Home/Home';
 import About from './_pages/About/About';
-import Footer from './_components/shared/Footer/Footer';
 import ProductPage from './_pages/Product/ProductPage';
 import Catalog from './_pages/Catalog/Catalog';
 
@@ -22,6 +24,7 @@ function App() {
   return (
     <>
       <Header />
+      <HeaderDevelopment />
       <ScrollToTop />
       <Routes>
         <Route path="/" exact element={<Home />} />

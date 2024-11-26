@@ -1,4 +1,5 @@
 import { TextComponent } from '../../IndexComponents';
+
 import './button.scss';
 
 export const Button = ({ type, text, clickFn }) => {

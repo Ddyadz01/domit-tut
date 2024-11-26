@@ -1,17 +1,13 @@
-import { Heart, Search, User } from 'lucide-react';
+import { Heart, User } from 'lucide-react';
 
-import { Button, CenterContent, LinkComponent, TextComponent } from '../../IndexComponents';
+import { Button, CenterContent, LinkComponent } from '../../IndexComponents';
 
-import { useDispatch, useSelector } from 'react-redux';
-
-import { login, logout } from '../../../store/Slices/UserSlice';
+import { useSelector } from 'react-redux';
 
 import styles from './header.module.scss';
 
 export const Header = () => {
   const { user } = useSelector((state) => state.user);
-
-  const dispatch = useDispatch();
 
   return (
     <header className={styles.header}>
@@ -26,9 +22,8 @@ export const Header = () => {
             <LinkComponent text={'Сотрудничество'} path={'/'} type={'link'} />
             <LinkComponent text={'Частые вопросы'} path={'/about'} type={'link'} />
           </div>
-
-          <div className={styles.header__content_right}>
-            {user.token && (
+          {user.token && (
+            <div className={styles.header__content_right}>
               <>
                 <Heart />
                 <div className={styles.header__content_right_user}>
@@ -46,12 +41,8 @@ export const Header = () => {
                   />
                 </div>
               </>
-            )}
-          </div>
-          <div className={styles.header__content__toggle}>
-            <Button text={'В системе'} type={'default'} clickFn={() => dispatch(login())} />
-            <Button text={'Не в системе'} type={'default'} clickFn={() => dispatch(logout())} />
-          </div>
+            </div>
+          )}
         </div>
       </CenterContent>
     </header>

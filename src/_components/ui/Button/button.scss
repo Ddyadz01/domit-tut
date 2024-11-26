@@ -28,6 +28,17 @@ button {
   }
 }
 
+.button.default-primary {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 8px 30px;
+  border-radius: 200px;
+  &:hover {
+    background: none;
+    border: 1px solid var(--color-gray);
+  }
+}
+
 .button.line {
   p {
     color: var(--color-primary);
