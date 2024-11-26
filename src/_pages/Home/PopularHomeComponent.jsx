@@ -22,7 +22,7 @@ const PopularHomeComponent = ({ items }) => {
             margin: '80px 0 40px 0',
           }}
         >
-          {items.map((item) => (
+          {items?.map((item) => (
             <ItemCard item={item} key={item.id} />
           ))}
         </div>

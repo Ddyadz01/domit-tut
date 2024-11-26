@@ -6,16 +6,20 @@ import ProductInfoTop from './ProductInfoTop';
 import ProductInfoContent from './ProductInfoContent';
 import ProductInfoBottom from './ProductInfoBottom';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useCurrentProduct } from '../../hooks/useCurrentProduct';
 
 import { Play } from 'lucide-react';
 
 import styles from './product.module.scss';
+import { useSelector } from 'react-redux';
 
 const ProductPage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const { id } = useParams();
+  const product = useCurrentProduct(id);
 
   const videoRef = useRef();
 
@@ -27,10 +31,6 @@ const ProductPage = () => {
     }
     setIsPlaying(!isPlaying);
   };
-
-  const { id } = useParams();
-
-  const product = useCurrentProduct(id);
 
   return product ? (
     <>
@@ -60,8 +60,12 @@ const ProductPage = () => {
                   poster={product.imageURL}
                   src={product?.videoURL}
                   onClick={handleVideo}
-                />
-                {!isPlaying && <Play />}
+                ></video>
+                {!isPlaying && (
+                  <div className={styles.product__info__media_left_icon}>
+                    <Play />
+                  </div>
+                )}
               </div>
               <div className={styles.product__info__media_right}></div>
             </div>
@@ -70,7 +74,7 @@ const ProductPage = () => {
       </div>
     </>
   ) : (
-    'Товар не найден'
+    'Тест'
   );
 };
 

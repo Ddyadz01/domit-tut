@@ -12,15 +12,24 @@ import Catalog from './_pages/Catalog/Catalog';
 
 import { ScrollToTop } from './utils/ScrollToTop';
 
-import { useSelector } from 'react-redux';
-
 import { ToastContainer } from 'react-toastify';
+
+import { useGetproducts } from './hooks/useGetProducts';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setProducts } from './store/Slices/ItemsSlice';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './App.scss';
 
 function App() {
-  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  const { data, status } = useGetproducts();
+
+  useEffect(() => {
+    data && dispatch(setProducts({ data, status }));
+  }, [data]);
   return (
     <>
       <Header />
@@ -29,7 +38,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/about" exact element={<About />} />
-        <Route path="/product/:id" exact element={<ProductPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path={'*'} exact element={<h1>Not Found</h1>} />
       </Routes>

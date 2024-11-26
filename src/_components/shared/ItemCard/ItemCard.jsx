@@ -43,7 +43,7 @@ export const ItemCard = ({ item }) => {
           )}
         </div>
         <div className={styles.item__card_content_bottom}>
-          <TextComponent text={'от 10 000 ₽ / сутки'} size="lg" />
+          <TextComponent text={`от ${item.tariffs.prices_info[0].price} ₽ / сутки`} size="lg" />
           <Link to={`/product/${item.id}`}>
             <Button text={'Подробнее'} type={'line'} />
             <MoveRight />
