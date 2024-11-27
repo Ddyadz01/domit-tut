@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { ToastContainer } from 'react-toastify';
 
-import { CenterContent, Footer, Header } from './_components/IndexComponents';
+import { Footer, Header } from './_components/IndexComponents';
 
 import { About, Home, ProductPage } from './_pages/IndexPages';
 
@@ -20,12 +20,13 @@ import PrivateRoutes from './PrivateRoutes';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './App.scss';
+import NotFound from './_pages/404/NotFound';
 
 function App() {
   const dispatch = useDispatch();
 
   const { data, status } = useGetproducts();
-  const {user} = useSelector(state => state.user)
+  const { user } = useSelector((state) => state.user);
 
   useEffect(() => {
     dispatch(setProducts({ data, status }));
@@ -35,25 +36,28 @@ function App() {
     {
       id: 1,
       path: '/',
-      element: <Home />
-    }
+      element: <Home />,
+    },
+    {
+      id: 2,
+      path: '*',
+      element: <NotFound />,
+    },
+  ];
 
-  ]
+  const privateRoutes = [
+    {
+      id: 1,
+      path: '/product/:id',
+      element: <ProductPage />,
+    },
+    {
+      id: 2,
+      path: '/about',
+      element: <About />,
+    },
+  ];
 
-    const privateRoutes = [
-      {
-        id: 1,
-        path: '/product/:id',
-        element: <ProductPage />
-      },
-      {
-        id: 2,
-        path: '/about',
-        element: <About />
-      }
-    ]
-
-    
   return (
     <>
       <Header />
@@ -61,18 +65,18 @@ function App() {
       <ScrollToTop />
 
       <Routes>
-        {publichRoutes.map(route => (
-          <Route key={route.id} path = {route.path} element={route.element} />
+        {publichRoutes.map((route) => (
+          <Route key={route.id} path={route.path} element={route.element} />
+        ))}
+
+        {privateRoutes.map((route) => (
+          <Route
+            path={route.path}
+            element={<PrivateRoutes user={user}>{route.element}</PrivateRoutes>}
+          ></Route>
         ))}
       </Routes>
 
-       <PrivateRoutes user={user}>
-          <Routes>
-            {privateRoutes.map(route => (
-          <Route key={route.id} path = {route.path} element={route.element} />
-        ))}
-          </Routes>
-        </PrivateRoutes>
       <Footer />
       <ToastContainer
         position="bottom-right"

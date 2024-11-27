@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./item-card.module.scss";
-import { Button, TextComponent } from "../../IndexComponents";
-import { MoveRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import styles from './item-card.module.scss';
+import { Button, TextComponent } from '../../IndexComponents';
+import { MoveRight } from 'lucide-react';
+import { Link } from 'react-router';
 
 export const ItemCard = ({ item }) => {
   return (
@@ -26,29 +26,26 @@ export const ItemCard = ({ item }) => {
           {item.features.bathhouse && (
             <div className={styles.item__card_content__list_info}>
               <img src="/icons/items_icons/banya.png" />
-              <TextComponent size="base" text={"Баня"} />
+              <TextComponent size="base" text={'Баня'} />
             </div>
           )}
           {item.features.pool && (
             <div className={styles.item__card_content__list_info}>
               <img src="/icons/items_icons/icon_waterpool.png" />
-              <TextComponent size="base" text={"Бассейн"} />
+              <TextComponent size="base" text={'Бассейн'} />
             </div>
           )}
           {item.features.table_tennis && (
             <div className={styles.item__card_content__list_info}>
               <img src="/icons/items_icons/icon_entertainment.png" />
-              <TextComponent size="base" text={"Настольный тенис"} />
+              <TextComponent size="base" text={'Настольный тенис'} />
             </div>
           )}
         </div>
         <div className={styles.item__card_content_bottom}>
-          <TextComponent
-            text={`от ${item.tariffs.prices_info[0].price} ₽ / сутки`}
-            size="lg"
-          />
+          <TextComponent text={`от ${item.tariffs.prices_info[0].price} ₽ / сутки`} size="lg" />
           <Link to={`/product/${item.id}`}>
-            <Button text={"Подробнее"} type={"line"} />
+            <Button text={'Подробнее'} type={'line'} />
             <MoveRight />
           </Link>
         </div>

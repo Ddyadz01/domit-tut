@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
-import { TextComponent } from "../../IndexComponents";
+import { Link, NavLink } from 'react-router';
+import { TextComponent } from '../../IndexComponents';
 
-import "./link.scss";
+import './link.scss';
 
-export const LinkComponent = ({ text, path, type = "default" }) => {
+export const LinkComponent = ({ text, path, type = 'default' }) => {
   return (
-    <Link to={path} className={type}>
-      <TextComponent text={text} size={"sm"} />
-    </Link>
+    <NavLink to={path} className={type}>
+      <TextComponent text={text} size={'sm'} />
+    </NavLink>
   );
 };

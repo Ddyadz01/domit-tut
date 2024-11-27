@@ -1,17 +1,11 @@
-import React from 'react';
-
-import { Route, Routes } from 'react-router-dom';
-import { CenterContent } from './_components/IndexComponents';
-import NotFound from './_pages/404/NotFound';
+import { Navigate, useLocation } from 'react-router';
 
 const PrivateRoutes = ({ user, children }) => {
+  const location = useLocation();
   if (!user.token) {
-    return (
-      <Routes>
-        <Route path={'*'} exact element={<NotFound />} />
-      </Routes>
-    );
+    return <Navigate to="/not-found" state={{ from: location.pathname }} />;
   }
+
   return children;
 };
 
