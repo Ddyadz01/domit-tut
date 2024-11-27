@@ -1,7 +1,7 @@
-import React from 'react';
-import { CenterContent, MiniSlider } from '../../_components/IndexComponents';
+import React from "react";
+import { CenterContent, MiniSlider } from "../../_components/IndexComponents";
 
-import styles from './home.module.scss';
+import styles from "./home.module.scss";
 
 const HomeComponent = () => {
   return (

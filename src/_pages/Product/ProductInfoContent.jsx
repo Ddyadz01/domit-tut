@@ -4,11 +4,11 @@ const ProductInfoContent = ({ product }) => {
   return (
     <div className={styles.product__info_content}>
       <div className={styles.product__info_content_left}>
-        <img src={product.imageURL} alt="" />
+        <img loading={'lazy'} src={product.imageURL} alt="" />
       </div>
       <div className={styles.product__info_content_right}>
         {product.features?.images?.map((image, idx) => (
-          <img key={idx} src={image} />
+          <img loading={'lazy'} key={idx} src={image} />
         ))}
       </div>
     </div>

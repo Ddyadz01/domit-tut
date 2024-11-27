@@ -8,7 +8,7 @@ a.link {
   margin: 0 15px;
   &::after,
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     height: 1px;

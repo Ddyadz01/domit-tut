@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { TextComponent } from '../../../_components/IndexComponents';
 
 import ProductTariffs from './ProductTariffs';
@@ -6,7 +7,6 @@ import ProductOptions from './ProductOptions';
 import ProductButtons from './ProductButtons';
 
 import styles from '../product.module.scss';
-import { useLocation } from 'react-router-dom';
 
 const ProductPrice = ({ product }) => {
   return (

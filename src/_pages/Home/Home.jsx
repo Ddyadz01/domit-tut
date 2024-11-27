@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-
+import { useSelector } from 'react-redux';
 import AboutComponent from './AboutComponent';
 import HomeComponent from './HomeComponent';
-import PopularHomeComponent from './PopularHomeComponent';
 import HomeOptionsComponent from './HomeOptionsComponent';
-import { useSelector } from 'react-redux';
+import PopularHomeComponent from './PopularHomeComponent';
 
-const Home = () => {
+export const Home = () => {
   const { items } = useSelector((state) => state.items);
   return (
     <div className="home_page">
@@ -17,5 +15,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

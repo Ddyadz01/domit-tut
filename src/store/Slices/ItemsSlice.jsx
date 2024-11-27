@@ -1,12 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   items: [],
-  status: 'pending',
+  status: "pending",
 };
 
 export const ItemsSlice = createSlice({
-  name: 'items',
+  name: "items",
   initialState,
   reducers: {
     setProducts: (state, action) => {

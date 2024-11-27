@@ -1,12 +1,12 @@
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
-import { Button } from '../../../_components/IndexComponents';
+import { Button } from "../../../_components/IndexComponents";
 
-import { ShareLinkProduct } from '../../../utils/ShareLinkProduct';
+import { ShareLinkProduct } from "../../../utils/ShareLinkProduct";
 
-import { ExternalLink, Heart } from 'lucide-react';
+import { ExternalLink, Heart } from "lucide-react";
 
-import styles from '../product.module.scss';
+import styles from "../product.module.scss";
 
 const ProductButtons = () => {
   const { user } = useSelector((state) => state.user);
@@ -14,8 +14,10 @@ const ProductButtons = () => {
   return (
     <div className={styles.product__info_bottom_info_price_buttons}>
       <Button
-        text={user.token ? 'Оставить заявку' : 'Входите, чтообы оставить заявку'}
-        type={'primary'}
+        text={
+          user.token ? "Оставить заявку" : "Входите, чтообы оставить заявку"
+        }
+        type={"primary"}
       />
       {user.token && (
         <Button
@@ -25,7 +27,7 @@ const ProductButtons = () => {
               <Heart />
             </>
           }
-          type={'default'}
+          type={"default"}
         />
       )}
       <Button
@@ -36,7 +38,7 @@ const ProductButtons = () => {
             <ExternalLink />
           </>
         }
-        type={'default'}
+        type={"default"}
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export const Notification = (message, type) => {
   return toast(message, {
@@ -9,9 +9,9 @@ export const Notification = (message, type) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: 'colored',
+    theme: "colored",
     style: {
-      background: 'var(--bg-element)',
+      background: "var(--bg-element)",
     },
   });
 };

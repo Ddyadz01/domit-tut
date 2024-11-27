@@ -1,12 +1,14 @@
-import React from 'react';
-import { CenterContent, TextComponent } from '../../_components/IndexComponents';
+import {
+  CenterContent,
+  TextComponent,
+} from "../../_components/IndexComponents";
 
-const About = () => {
+import React from "react";
+
+export const About = () => {
   return (
     <CenterContent>
-      <TextComponent size={'heading'} text={'Информация'} />
+      <TextComponent size={"heading"} text={"Информация"} />
     </CenterContent>
   );
 };
-
-export default About;

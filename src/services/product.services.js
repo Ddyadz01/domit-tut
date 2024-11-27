@@ -8,4 +8,4 @@ class ProductServices {
   }
 }
 
-export const ProductSerices = new ProductServices();
+export const { getProducts } = new ProductServices();
