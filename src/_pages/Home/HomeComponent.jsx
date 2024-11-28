@@ -1,13 +1,13 @@
-import React from "react";
-import { CenterContent, MiniSlider } from "../../_components/IndexComponents";
+import React from 'react';
+import { CenterContent, MiniSlider } from '../../_components/IndexComponents';
 
-import styles from "./home.module.scss";
+import styles from './home.module.scss';
 
 const HomeComponent = () => {
   return (
     <div className={styles.home}>
       <div className={styles.home__background}>
-        <img src="/src/assets/home__bg-image.png" alt="" />
+        <img src="/home__bg-image.png" alt="" />
       </div>
       <CenterContent>
         <div className={styles.home__content}>

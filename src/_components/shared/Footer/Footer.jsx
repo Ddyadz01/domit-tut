@@ -1,12 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./footer.module.scss";
-import {
-  Button,
-  CenterContent,
-  LinkComponent,
-  TextComponent,
-} from "../../IndexComponents";
+import styles from './footer.module.scss';
+import { Button, CenterContent, LinkComponent, TextComponent } from '../../IndexComponents';
 
 export const Footer = () => {
   return (
@@ -25,10 +20,10 @@ export const Footer = () => {
         <CenterContent>
           <div className={styles.footer__content_info}>
             <div className={styles.footer__content_info_logo}>
-              <img src="/src/assets/logo-white.png" alt="" />
+              <img src="/logo-white.png" alt="" />
             </div>
             <div className={styles.footer__content_info_catalog}>
-              <TextComponent text={"Каталог"} size={"lg"} />
+              <TextComponent text={'Каталог'} size={'lg'} />
               <ul>
                 <li>С бассейном</li>
                 <li>Семейные и уютные</li>
@@ -40,15 +35,15 @@ export const Footer = () => {
             <div className={styles.footer__content_info_links}>
               <ul>
                 <li>
-                  <LinkComponent path={"/"} text={"Сотрудничество"} />
+                  <LinkComponent path={'/'} text={'Сотрудничество'} />
                 </li>
                 <li>
-                  <LinkComponent path={"/about"} text={"Частые вопросы"} />
+                  <LinkComponent path={'/about'} text={'Частые вопросы'} />
                 </li>
               </ul>
             </div>
             <div className={styles.footer__content_info_contacts}>
-              <TextComponent text={"8 (843) 528-65-48"} size={"lg"} />
+              <TextComponent text={'8 (843) 528-65-48'} size={'lg'} />
             </div>
           </div>
         </CenterContent>

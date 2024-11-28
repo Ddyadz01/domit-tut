@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 
-import { CenterContent } from '../../_components/IndexComponents';
-
 import { useLocation, useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
 
+import { CenterContent } from '../../_components/IndexComponents';
+
 import styles from './404.module.scss';
 
-const NotFound = () => {
+export const NotFound = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -27,5 +27,3 @@ const NotFound = () => {
     </CenterContent>
   );
 };
-
-export default NotFound;

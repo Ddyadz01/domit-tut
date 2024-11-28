@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { Route, Routes } from 'react-router';
+
 import { useDispatch, useSelector } from 'react-redux';
 
 import { ToastContainer } from 'react-toastify';
 
 import { Footer, Header } from './_components/IndexComponents';
 
-import { About, Home, ProductPage } from './_pages/IndexPages';
+import { About, Home, NotFound, ProductPage } from './_pages/IndexPages';
 
 import { setProducts } from './store/Slices/ItemsSlice';
 
@@ -16,11 +16,10 @@ import { ScrollToTop } from './utils/ScrollToTop';
 
 import HeaderDevelopment from './develompentComponents/HeaderDevelopment/HeaderDevelopment';
 
-import PrivateRoutes from './PrivateRoutes';
+import AppRoute from './routes/AppRoute';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './App.scss';
-import NotFound from './_pages/404/NotFound';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,29 +31,30 @@ function App() {
     dispatch(setProducts({ data, status }));
   }, [data]);
 
-  const publichRoutes = [
+  const routes = [
     {
       id: 1,
       path: '/',
       element: <Home />,
+      type: 'public',
     },
     {
       id: 2,
       path: '*',
       element: <NotFound />,
+      type: 'public',
     },
-  ];
-
-  const privateRoutes = [
     {
-      id: 1,
+      id: 3,
       path: '/product/:id',
       element: <ProductPage />,
+      type: 'public',
     },
     {
-      id: 2,
+      id: 4,
       path: '/about',
       element: <About />,
+      type: 'private',
     },
   ];
 
@@ -63,20 +63,7 @@ function App() {
       <Header />
       <HeaderDevelopment />
       <ScrollToTop />
-
-      <Routes>
-        {publichRoutes.map((route) => (
-          <Route key={route.id} path={route.path} element={route.element} />
-        ))}
-
-        {privateRoutes.map((route) => (
-          <Route
-            path={route.path}
-            element={<PrivateRoutes user={user}>{route.element}</PrivateRoutes>}
-          ></Route>
-        ))}
-      </Routes>
-
+      <AppRoute routes={routes} user={user} />
       <Footer />
       <ToastContainer
         position="bottom-right"
